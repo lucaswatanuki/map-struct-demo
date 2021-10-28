@@ -1,12 +1,18 @@
 package com.mapstruct.demo.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "customers")
+@Getter
+@Setter
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class Customer {
 
     @Id

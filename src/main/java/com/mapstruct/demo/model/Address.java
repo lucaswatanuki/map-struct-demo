@@ -1,9 +1,16 @@
 package com.mapstruct.demo.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "addresses")
+@Getter
+@Setter
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class Address {
 
     @Id

@@ -12,8 +12,8 @@ import java.util.List;
 public interface CustomerClient {
 
     @GetMapping("/customers/all")
-    List<Customer> findAll();
+    List<CustomerDto> findAll();
 
     @PostMapping(value = "/customers")
-    String create(CustomerDto dto);
+    CustomerDto create(CustomerDto dto);
 }

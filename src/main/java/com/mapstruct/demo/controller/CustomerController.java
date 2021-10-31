@@ -17,13 +17,12 @@ public class CustomerController {
     private CustomerService customerService;
 
     @PostMapping
-    public ResponseEntity<String> create(@RequestBody CustomerDto dto) {
-        customerService.create(dto);
-        return ResponseEntity.ok().body("Customer created");
+    public ResponseEntity<CustomerDto> create(@RequestBody CustomerDto dto) {
+        return ResponseEntity.ok().body(customerService.create(dto));
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Customer>> findAllCustomers() {
+    public ResponseEntity<List<CustomerDto>> findAllCustomers() {
         return ResponseEntity.ok(customerService.findAll());
     }
 

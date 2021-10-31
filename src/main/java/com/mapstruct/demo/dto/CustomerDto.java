@@ -27,5 +27,5 @@ public class CustomerDto {
     private Boolean emailNotification;
     private Boolean newsletter;
     private String alias;
-    private List<Address> address;
+    private List<AddressDto> address;
 }

@@ -11,7 +11,6 @@ import lombok.*;
 public class AddressDto {
 
     private Long id;
-    private Customer customer;
     private String streetAddress;
     private String streetAddress2;
     private String city;

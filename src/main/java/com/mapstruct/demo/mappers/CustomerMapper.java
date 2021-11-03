@@ -8,13 +8,9 @@ import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Mapper(componentModel = "spring", uses = AddressMapper.class)
-public abstract class CustomerMapper {
+public interface CustomerMapper {
 
-    @Autowired
-    protected CPFService cpfService;
+    Customer mapToCustomerEntity(CustomerDto dto);
 
-    @Mapping(target = "cpf", expression = "java(cpfService.formatCpf(dto.getCpf()))")
-    public abstract Customer mapToCustomerEntity(CustomerDto dto);
-
-    public abstract CustomerDto mapToCustomerDto(Customer customer);
+    CustomerDto mapToCustomerDto(Customer customer);
 }
